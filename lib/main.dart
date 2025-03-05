@@ -1,8 +1,9 @@
-import 'package:ficha_app_01/classes/DndClass.dart';
-import 'package:ficha_app_01/classes/Personagen.dart';
-import 'package:ficha_app_01/pages/Ficha_Page.dart';
-import 'package:ficha_app_01/pages/Home_Page.dart';
+
 import 'package:flutter/material.dart';
+
+import 'classes/DndClass.dart';
+import 'classes/Personagen.dart';
+import 'pages/ficha_page.dart';
 
 void main() {
   runApp(const FichaApp());
@@ -26,7 +27,7 @@ class FichaApp extends StatelessWidget {
         proficiencies: ["arcanismo", "prestigitação"], 
         abilities: ["Conjuração"]
       ), 
-      proficiencias: [""], 
+      
       atributos: {
         "For": 10,
         "Dex": 14,
@@ -34,6 +35,33 @@ class FichaApp extends StatelessWidget {
         "Int": 18,
         "Sab": 9,
         "Car": 10
+      },
+      proficiencias: {
+        "Acrobacia": false,
+        "Adestrar Animais": false,
+        "Arcanismo": false,
+        "Atletismo": false,
+        "Enganação": false,
+        "História": false,
+        "Intuição": false,
+        "Intimidação": false,
+        "Medicina": false,
+        "Natureza": false,
+        "Percepção": false,
+        "Atuação": false,
+        "Persuasão": false,
+        "Religião": false,
+        "Furtividade": true,
+        "Prestidigitação": false,
+        "Sobrevivência": false
+      },
+      salvaguardas: {
+        "For": false,
+        "Dex": false,
+        "Con": false,
+        "Int": false,
+        "Sab": false,
+        "Car": false
       }
     );
 
@@ -43,7 +71,7 @@ class FichaApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Ficha_Page(personagem: altair),
+      home: FichaPage(personagem: altair),
     );
   }
 }

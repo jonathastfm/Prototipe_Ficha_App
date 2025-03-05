@@ -23,7 +23,19 @@ class HomePage extends StatelessWidget {
         'Sabedoria': 12,
         'Carisma': 10,
       },
-    proficiencias: ['Lâminas Ocultas', 'Furtividade', 'Parkour'],
+      salvaguardas: {
+        'Força': false,
+        'Destreza': false,
+        'Constituição': false,
+        'Inteligência': false,
+        'Sabedoria': false,
+        'Carisma': false,
+      },
+      proficiencias: {
+        'Lâminas Ocultas': true,
+        'Furtividade': true,
+        'Parkour': true,
+      },
   );
 
   HomePage({super.key});
@@ -54,7 +66,7 @@ class HomePage extends StatelessWidget {
                 // Navigate to character list page
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Ficha_Page(   personagem: altair)),
+                  MaterialPageRoute(builder: (context) => FichaPage(   personagem: altair)),
                 );
               },
               child: Text('View Characters'),
