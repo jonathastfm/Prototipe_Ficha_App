@@ -1,5 +1,5 @@
 import 'package:ficha_app_01/classes/DndClass.dart';
-import 'package:ficha_app_01/classes/Personagen.dart';
+import 'package:ficha_app_01/classes/Personagem.dart';
 import 'package:ficha_app_01/pages/Ficha_Page.dart';
 import 'package:flutter/material.dart';
 

@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 import 'classes/DndClass.dart';
-import 'classes/Personagen.dart';
+import 'classes/Personagem.dart';
 import 'pages/ficha_page.dart';
 
 void main() {
@@ -58,8 +58,8 @@ class FichaApp extends StatelessWidget {
       salvaguardas: {
         "For": false,
         "Dex": false,
-        "Con": false,
-        "Int": false,
+        "Con": true,
+        "Int": true,
         "Sab": false,
         "Car": false
       }
