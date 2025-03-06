@@ -21,11 +21,11 @@ class FichaApp extends StatelessWidget {
       idade: 80, 
       raca: "humano", 
       classe: DnDClass(
-        name: "Artificer", 
-        description: "TechMage", 
+        nome: "Artificer", 
+        descricao: "TechMage", 
         hpDice: 8, 
-        proficiencies: ["arcanismo", "prestigitação"], 
-        abilities: ["Conjuração"]
+        proficiencias: ["arcanismo", "prestigitação"], 
+        habilidades: ["Conjuração"]
       ), 
       
       atributos: {

@@ -1,6 +1,7 @@
 import 'package:ficha_app_01/classes/DndClass.dart';
 
 class Personagem {
+  //vars
   String nome;
   int idade;
   int nivel = 1;

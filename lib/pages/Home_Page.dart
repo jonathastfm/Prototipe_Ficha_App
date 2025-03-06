@@ -5,38 +5,7 @@ import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
 
-  Personagem altair = Personagem(
-    nome: 'Altair',
-    idade: 25,
-    raca: 'Humano',
-    classe: DnDClass(
-      name: "Artificer", 
-      description: "Techmage", 
-      hpDice: 8, 
-      proficiencies: ["int", "const"], 
-      abilities: ["conjuração", "engenharia magica"]),
-      atributos: {
-        'Força': 10,
-        'Destreza': 16,
-        'Constituição': 14,
-        'Inteligência': 18,
-        'Sabedoria': 12,
-        'Carisma': 10,
-      },
-      salvaguardas: {
-        'Força': false,
-        'Destreza': false,
-        'Constituição': false,
-        'Inteligência': false,
-        'Sabedoria': false,
-        'Carisma': false,
-      },
-      proficiencias: {
-        'Lâminas Ocultas': true,
-        'Furtividade': true,
-        'Parkour': true,
-      },
-  );
+  
 
   HomePage({super.key});
   @override
@@ -66,7 +35,7 @@ class HomePage extends StatelessWidget {
                 // Navigate to character list page
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => FichaPage(   personagem: altair)),
+                  MaterialPageRoute(builder: (context) => FichaPage(   personagem: null!)),
                 );
               },
               child: Text('View Characters'),

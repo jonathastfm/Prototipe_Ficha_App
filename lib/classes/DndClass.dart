@@ -1,18 +1,16 @@
 class DnDClass {
-  String name;
-  String description;
+  String nome;
+  String descricao;
   int hpDice;
-  List<String> proficiencies;
-  List<String> abilities;
+  List<String> proficiencias;
+  List<String> habilidades;
 
   DnDClass({
-    required this.name,
-    required this.description,
-    required this.hpDice
-,
-    required this.proficiencies,
-    required this.abilities,
+    required this.nome,
+    required this.descricao,
+    required this.hpDice,
+    required this.proficiencias,
+    required this.habilidades,
   });
 
-  
 }
