@@ -11,6 +11,7 @@ class Personagem {
   DnDClass classe;
   int deslocamento = 9;
   int iniciativa = 0;
+  Map<String, dynamic> habilidades = {};
 
 
   //map vars

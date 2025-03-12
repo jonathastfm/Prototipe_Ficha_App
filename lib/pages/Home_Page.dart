@@ -1,48 +1,56 @@
-import 'package:ficha_app_01/classes/DndClass.dart';
-import 'package:ficha_app_01/classes/Personagem.dart';
-import 'package:ficha_app_01/pages/Ficha_Page.dart';
+import 'package:ficha_app_01/widgets/home_widgets/home_criar_widget.dart';
+import 'package:ficha_app_01/widgets/home_widgets/home_ficha_widget.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
 
-  
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
 
-  HomePage({super.key});
+class _HomePageState extends State<HomePage> {
+  int _selectedIndex = 0;
+  List<Widget> body = <Widget>[
+    HomeCriarWidget(),
+    HomeFichaWidget(),
+    Text(
+      'Index 2: Conteudo',
+      style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('RPG App Home'),
+        backgroundColor: Colors.deepPurple,
+        title: const Text('Home Page'),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'Welcome to the RPG App!',
-              style: TextStyle(fontSize: 24),
-            ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                // Navigate to character creation page
-              },
-              child: Text('Create Character'),
-            ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                // Navigate to character list page
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => FichaPage(   personagem: null!)),
-                );
-              },
-              child: Text('View Characters'),
-            ),
-          ],
-        ),
-      ),
-    );
+      body: body[_selectedIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.deepPurple,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.add),
+            label: 'Criar',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Fichas',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.school),
+            label: 'Conteudo',
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.deepPurpleAccent,
+        onTap: (int index) {
+          setState(() {
+            _selectedIndex = index;
+          });
+        }),
+      );
   }
 }

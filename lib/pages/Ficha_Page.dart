@@ -1,5 +1,6 @@
 import 'package:ficha_app_01/widgets/ficha_widgets/Atributos_salvaguardas_widget.dart';
 import 'package:ficha_app_01/widgets/ficha_widgets/Inventario.dart';
+import 'package:ficha_app_01/widgets/ficha_widgets/Magias_Habilidades_Widget.dart';
 import 'package:flutter/material.dart';
 import '../classes/Personagem.dart';
 
@@ -17,7 +18,7 @@ class FichaPage extends StatefulWidget {
 
 class _FichaPageState extends State<FichaPage> {
 
-  int dropDownValue = 2;
+  int dropDownValue = 1;
   @override
   Widget build(BuildContext context) {
     final personagem = widget.personagem;
@@ -89,27 +90,34 @@ class _FichaPageState extends State<FichaPage> {
             
               // Attributes Section
               const SizedBox(height: 10),
-              Container(
-                padding: const EdgeInsets.all(8),
-                color: Colors.grey[300],
-                width: double.infinity,
-                child: Center(
-                  child: DropdownButton(
-                    style: const TextStyle(fontSize: 24),
-                    
-                    value: dropDownValue,
-                    items: const [
-                      DropdownMenuItem(child: Text("Atributos e salvaguardas"), value: 1),
-                      DropdownMenuItem(child: Text("inventario"), value: 2),
-                      DropdownMenuItem(child: Text("Magias e Habilidades"), value: 3),
+              Padding(
+                padding: const EdgeInsets.all(14.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8),
+                    color: Colors.grey[300],
+                  ),
+                  padding: const EdgeInsets.all(8),
+                  
+                  width: double.infinity,
+                  child: Center(
+                    child: DropdownButton(
+                      style: const TextStyle(fontSize: 24),
                       
-                    ],
-                    onChanged: (value) {
-                      setState(() {
-                        dropDownValue = value as int;
-                      });
-                    },
-                    
+                      value: dropDownValue,
+                      items: const [
+                        DropdownMenuItem(child: Text("Atributos e salvaguardas"), value: 1),
+                        DropdownMenuItem(child: Text("inventario"), value: 2),
+                        DropdownMenuItem(child: Text("Magias e Habilidades"), value: 3),
+                        
+                      ],
+                      onChanged: (value) {
+                        setState(() {
+                          dropDownValue = value as int;
+                        });
+                      },
+                      
+                    ),
                   ),
                 ),
               ),
@@ -118,7 +126,7 @@ class _FichaPageState extends State<FichaPage> {
                 children: [
                   AtributosSalvaguardasWidget(personagem: personagem),
                   Inventario(),
-                  Placeholder(),
+                  MagiasHabilidadesWidget(),
             
                 ],
               ),
