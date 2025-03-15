@@ -16,9 +16,9 @@ class HomeCriarWidget extends StatelessWidget {
         ),
         
         children: [
-          buildButton('Guerreiro', 'Guerreiro', 1),
-          buildButton('Mago', 'Mago', 1),
-          buildButton('Ladino', 'Ladino', 1),
+          buildButton('Criar Classe'),
+          buildButton('Criar SubClasse'),
+          buildButton('Criar Raça'),
           
         ],
           
@@ -28,7 +28,7 @@ class HomeCriarWidget extends StatelessWidget {
   }
 }
 
-Widget buildButton(String nome, String classe, int nivel) {
+Widget buildButton(String nome) {
   return Card(
     color: Colors.grey[200],
     child: MaterialButton(
@@ -38,7 +38,7 @@ Widget buildButton(String nome, String classe, int nivel) {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(Icons.add, size: 50),
-          Text('$classe $nivel'),
+          Text('$nome', style: TextStyle(fontSize: 24)),
         ],
       ),
     )

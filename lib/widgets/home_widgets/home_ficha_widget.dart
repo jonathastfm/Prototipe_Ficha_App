@@ -163,8 +163,16 @@ class _HomeFichaWidgetState extends State<HomeFichaWidget> {
     return Container(
       padding: EdgeInsets.all(16),
       child: ListView.builder(
-        itemCount: personagens.length,
+        itemCount: personagens.length + 1,
         itemBuilder: (context, index) {
+          if (index == personagens.length) {
+        return ElevatedButton(
+          onPressed: () {
+            // Handle create new character
+          },
+          child: Text('Criar Nova Ficha'),
+        );
+          }
           final personagem = personagens[index];
           return buildCharacterTile(context, personagem);
         },

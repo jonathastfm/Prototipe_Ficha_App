@@ -2,8 +2,6 @@
 import 'package:ficha_app_01/pages/Home_Page.dart';
 import 'package:flutter/material.dart';
 
-import 'classes/DndClass.dart';
-import 'classes/Personagem.dart';
 import 'pages/ficha_page.dart';
 
 void main() {
