@@ -1,5 +1,6 @@
 import 'package:ficha_app_01/widgets/home_widgets/home_criar_widget.dart';
 import 'package:ficha_app_01/widgets/home_widgets/home_ficha_widget.dart';
+import 'package:ficha_app_01/widgets/home_widgets/home_pdf_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -14,10 +15,7 @@ class _HomePageState extends State<HomePage> {
   List<Widget> body = <Widget>[
     HomeCriarWidget(),
     HomeFichaWidget(),
-    Text(
-      'Index 2: Conteudo',
-      style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
-    ),
+    HomePdfWidget(pdfFiles: ['pdf1', 'pdf2', 'pdf3']),
   ];
 
   @override
