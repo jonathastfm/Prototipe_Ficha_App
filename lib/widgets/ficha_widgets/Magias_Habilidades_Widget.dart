@@ -1,7 +1,7 @@
 
 
 import 'package:flutter/material.dart';
-import '../../classes/Personagem.dart'; // Adjust the import path as necessary
+// Adjust the import path as necessary
 
 class MagiasHabilidadesWidget extends StatefulWidget {
   const MagiasHabilidadesWidget({super.key});

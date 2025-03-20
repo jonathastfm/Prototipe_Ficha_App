@@ -44,7 +44,7 @@ Widget buildButton(BuildContext context, String nome) {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(Icons.add, size: 50),
-          Text('$nome', style: TextStyle(fontSize: 24)),
+          Text(nome, style: TextStyle(fontSize: 24)),
         ],
       ),
     )

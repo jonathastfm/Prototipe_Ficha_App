@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 class HomePdfWidget extends StatelessWidget {
   final List<String> pdfFiles;
 
-  HomePdfWidget({required this.pdfFiles});
+  const HomePdfWidget({super.key, required this.pdfFiles});
 
   @override
   Widget build(BuildContext context) {

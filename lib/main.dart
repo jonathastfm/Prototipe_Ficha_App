@@ -2,7 +2,6 @@
 import 'package:ficha_app_01/pages/Home_Page.dart';
 import 'package:flutter/material.dart';
 
-import 'pages/ficha_page.dart';
 
 void main() {
   runApp(const FichaApp());

@@ -118,9 +118,9 @@ class _FichaPageState extends State<FichaPage> {
                       
                       value: dropDownValue,
                       items: const [
-                        DropdownMenuItem(child: Text("Atributos e salvaguardas"), value: 1),
-                        DropdownMenuItem(child: Text("inventario"), value: 2),
-                        DropdownMenuItem(child: Text("Magias e Habilidades"), value: 3),
+                        DropdownMenuItem(value: 1, child: Text("Atributos e salvaguardas")),
+                        DropdownMenuItem(value: 2, child: Text("inventario")),
+                        DropdownMenuItem(value: 3, child: Text("Magias e Habilidades")),
                         
                       ],
                       onChanged: (value) {

@@ -2,6 +2,8 @@ import 'package:ficha_app_01/widgets/criar_widgets/Criar_classe_widget.dart';
 import 'package:flutter/material.dart';
 
 class CreatePage extends StatefulWidget {
+  const CreatePage({super.key});
+
   @override
   _CreatePageState createState() => _CreatePageState();
 }

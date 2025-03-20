@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import '../../classes/DndClass.dart';
 
 class CriarClasseWidget extends StatefulWidget {
+  const CriarClasseWidget({super.key});
+
   @override
   _CriarClasseWidgetState createState() => _CriarClasseWidgetState();
 }
