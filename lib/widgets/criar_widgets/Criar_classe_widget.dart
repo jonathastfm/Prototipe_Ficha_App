@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../classes/DndClass.dart';
 
 class CriarClasseWidget extends StatefulWidget {
   @override
@@ -8,6 +9,12 @@ class CriarClasseWidget extends StatefulWidget {
 class _CriarClasseWidgetState extends State<CriarClasseWidget> {
   int _currentStep = 0;
   final _formKey = GlobalKey<FormState>();
+
+  final TextEditingController _nomeController = TextEditingController();
+  final TextEditingController _descricaoController = TextEditingController();
+  final TextEditingController _hpDiceController = TextEditingController();
+  final TextEditingController _proficienciasController = TextEditingController();
+  final TextEditingController _habilidadesController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +40,7 @@ class _CriarClasseWidgetState extends State<CriarClasseWidget> {
           child: Column(
             children: [
               TextFormField(
+                controller: _nomeController,
                 decoration: InputDecoration(labelText: 'Nome da Classe'),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -42,6 +50,7 @@ class _CriarClasseWidgetState extends State<CriarClasseWidget> {
                 },
               ),
               TextFormField(
+                controller: _descricaoController,
                 decoration: InputDecoration(labelText: 'Descrição'),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -60,10 +69,35 @@ class _CriarClasseWidgetState extends State<CriarClasseWidget> {
         content: Column(
           children: [
             TextFormField(
-              decoration: InputDecoration(labelText: 'Atributo 1'),
+              controller: _hpDiceController,
+              decoration: InputDecoration(labelText: 'HP Dice'),
+              keyboardType: TextInputType.number,
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Por favor, insira o HP Dice';
+                }
+                return null;
+              },
             ),
             TextFormField(
-              decoration: InputDecoration(labelText: 'Atributo 2'),
+              controller: _proficienciasController,
+              decoration: InputDecoration(labelText: 'Proficiências (separadas por vírgula)'),
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Por favor, insira as proficiências';
+                }
+                return null;
+              },
+            ),
+            TextFormField(
+              controller: _habilidadesController,
+              decoration: InputDecoration(labelText: 'Habilidades (separadas por vírgula)'),
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Por favor, insira as habilidades';
+                }
+                return null;
+              },
             ),
           ],
         ),
@@ -85,6 +119,14 @@ class _CriarClasseWidgetState extends State<CriarClasseWidget> {
     } else {
       if (_formKey.currentState?.validate() ?? false) {
         // Process the data
+        DnDClass novaClasse = DnDClass(
+          nome: _nomeController.text,
+          descricao: _descricaoController.text,
+          hpDice: int.parse(_hpDiceController.text),
+          proficiencias: _proficienciasController.text.split(',').map((e) => e.trim()).toList(),
+          habilidades: _habilidadesController.text.split(',').map((e) => e.trim()).toList(),
+        );
+        // Aqui você pode salvar ou usar a novaClasse conforme necessário
       }
     }
   }
