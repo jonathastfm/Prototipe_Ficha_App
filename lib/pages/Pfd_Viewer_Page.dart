@@ -17,7 +17,7 @@ class _PdfViewerPageState extends State<PdfViewerPage> {
       appBar: AppBar(
         title: Text('PDF Viewer'),
       ),
-      body: SfPdfViewer.asset(widget.path),
+      body: SfPdfViewer.asset("lib/${widget.path}"),
     );
   }
 }

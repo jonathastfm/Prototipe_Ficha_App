@@ -23,6 +23,18 @@ class _FichaPageState extends State<FichaPage> {
   Widget build(BuildContext context) {
     final personagem = widget.personagem;
     return Scaffold(
+      appBar: AppBar(
+        title: Text(personagem.nome),
+        centerTitle: true,
+        backgroundColor: Colors.purple,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+
+      ),
       backgroundColor: Colors.white,
       body: SafeArea(
         child: SingleChildScrollView(

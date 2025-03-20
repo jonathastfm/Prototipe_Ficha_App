@@ -1,3 +1,4 @@
+import 'package:ficha_app_01/pages/Create_Page.dart';
 import 'package:flutter/material.dart';
 
 class HomeCriarWidget extends StatelessWidget {
@@ -16,9 +17,9 @@ class HomeCriarWidget extends StatelessWidget {
         ),
         
         children: [
-          buildButton('Criar Classe'),
-          buildButton('Criar SubClasse'),
-          buildButton('Criar Raça'),
+          buildButton(context, 'Criar Classe'),
+          buildButton(context, 'Criar SubClasse'),
+          buildButton(context, 'Criar Raça'),
           
         ],
           
@@ -28,12 +29,17 @@ class HomeCriarWidget extends StatelessWidget {
   }
 }
 
-Widget buildButton(String nome) {
+Widget buildButton(BuildContext context, String nome) {
   return Card(
     color: Colors.grey[200],
     child: MaterialButton(
       
-      onPressed: (){}, 
+      onPressed: (){
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => CreatePage()),
+        );
+      }, 
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

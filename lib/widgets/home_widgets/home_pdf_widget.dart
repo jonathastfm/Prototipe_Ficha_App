@@ -1,4 +1,4 @@
-import 'package:ficha_app_01/pages/Pfd_Viewer_Page';
+import 'package:ficha_app_01/pages/Pfd_Viewer_Page.dart';
 import 'package:flutter/material.dart';
 
 
@@ -24,7 +24,7 @@ class HomePdfWidget extends StatelessWidget {
               ),
               title: Text(pdfFile),
               onTap: () {
-                openPfd(context);
+                openPfd(context, "resumo-classes.pdf");
               },
             ),
           );
@@ -33,11 +33,11 @@ class HomePdfWidget extends StatelessWidget {
     );
   }
   
-  void openPfd(BuildContext context) {
+  void openPfd(BuildContext context, String path) {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => PdfViewerPage(path: 'assets/resumo-classes.pdf'),
+        builder: (context) => PdfViewerPage(path: path),
       ),
     );
     
